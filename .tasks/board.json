@@ -1,0 +1,137 @@
+{
+  "project_name": "svralabs-playful-kids-learning",
+  "architecture_summary": "Modular React app. Design system components extracted from Stitch screens. Pages map 1:1 to major screens. Shared UI kit in src/components/. Router use React Router. State minimal, local-first. CSS-in-JS via styled-components (already in Stitch output).",
+  "tickets": [
+    {
+      "id": "TASK-001",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Extract design system components from Stitch screens",
+      "source_screen": "",
+      "description": "Parse Stitch HTML/CSS. Build shared UI kit. Components: Button, Badge, Card, Input, Loader/Skeleton, Tab, Table, Toast/Alert. Place in src/components/. Use exact Stitch class names for styling. Keep props minimal. No business logic.",
+      "target_files": [
+        "src/components/Button.jsx",
+        "src/components/Badge.jsx",
+        "src/components/Card.jsx",
+        "src/components/Input.jsx",
+        "src/components/Loader.jsx",
+        "src/components/Skeleton.jsx",
+        "src/components/Tab.jsx",
+        "src/components/Table.jsx",
+        "src/components/Toast.jsx"
+      ],
+      "acceptance_criteria": [
+        "Each component render pixel-perfect match to Stitch screen",
+        "Props cover all Stitch variants (size, color, state)",
+        "No external deps beyond styled-components",
+        "Storybook stories auto-generated for each"
+      ],
+      "status": "DONE"
+    },
+    {
+      "id": "TASK-002",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Build main showcase page (src/pages/Showcase.jsx)",
+      "source_screen": "showcase_playful_bento",
+      "description": "Convert Stitch HTML to React. Use design system components. Layout match exact. Responsive breakpoints from Stitch CSS. No hardcoded colors or spacing. Data mock in component for now.",
+      "target_files": [
+        "src/pages/Showcase.jsx"
+      ],
+      "acceptance_criteria": [
+        "Pixel-perfect match to Stitch screen",
+        "All interactive elements functional (hover, click)",
+        "Responsive behavior match Stitch breakpoints",
+        "No console errors"
+      ],
+      "status": "DONE"
+    },
+    {
+      "id": "TASK-003",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Build feature highlights page (src/pages/Features.jsx)",
+      "source_screen": "feature_highlights_kids_learning_platform",
+      "description": "Convert Stitch screen. Use design system components. Animations match Stitch (CSS transitions only). Data mock in component.",
+      "target_files": [
+        "src/pages/Features.jsx"
+      ],
+      "acceptance_criteria": [
+        "Pixel-perfect match to Stitch screen",
+        "Animations trigger on scroll (IntersectionObserver)",
+        "No external animation libs"
+      ],
+      "status": "DONE"
+    },
+    {
+      "id": "TASK-004",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Build 404 error pages (src/pages/errors/*)",
+      "source_screen": "404_error_mystery_puzzle,404_error_jungle_trail,404_error_cosmic_detour",
+      "description": "Convert all three 404 screens. Use design system components. Randomly rotate between variants on 404 route. Keep Stitch illustrations (SVG inline or img tag).",
+      "target_files": [
+        "src/pages/errors/MysteryPuzzle.jsx",
+        "src/pages/errors/JungleTrail.jsx",
+        "src/pages/errors/CosmicDetour.jsx"
+      ],
+      "acceptance_criteria": [
+        "Each screen pixel-perfect match to Stitch",
+        "Random rotation on 404 route",
+        "Back button functional",
+        "No console errors"
+      ],
+      "status": "DONE"
+    },
+    {
+      "id": "TASK-005",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Build design system showcase pages (src/pages/DesignSystem/*)",
+      "source_screen": "toast_alert_design_system_showcase,table_design_system_showcase,tab_design_system_showcase,loader_skeleton_design_system_showcase,input_design_system_showcase,card_design_system_showcase,button_design_system_showcase,badge_design_system_showcase",
+      "description": "Convert all design system showcase screens. Each component get own page. Live interactive demos. Props table auto-generated from component metadata.",
+      "target_files": [
+        "src/pages/DesignSystem/ToastAlert.jsx",
+        "src/pages/DesignSystem/Table.jsx",
+        "src/pages/DesignSystem/Tab.jsx",
+        "src/pages/DesignSystem/LoaderSkeleton.jsx",
+        "src/pages/DesignSystem/Input.jsx",
+        "src/pages/DesignSystem/Card.jsx",
+        "src/pages/DesignSystem/Button.jsx",
+        "src/pages/DesignSystem/Badge.jsx"
+      ],
+      "acceptance_criteria": [
+        "Each page pixel-perfect match to Stitch",
+        "All component variants interactive",
+        "Props table accurate",
+        "No console errors"
+      ],
+      "status": "DONE"
+    },
+    {
+      "id": "TASK-006",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "App shell, navigation bar, and router wiring (src/App.jsx)",
+      "source_screen": "",
+      "description": "Create main App shell. Navigation bar match Stitch header. Router use React Router. Routes: / (Showcase), /features, /design-system/*, /404. Lazy load pages. Error boundary wrap all routes. Global styles from Stitch CSS.",
+      "target_files": [
+        "src/App.jsx",
+        "src/routes.jsx",
+        "src/components/NavBar.jsx",
+        "src/styles/global.css"
+      ],
+      "acceptance_criteria": [
+        "All routes render correct page",
+        "Navigation bar sticky, match Stitch",
+        "Lazy loading functional",
+        "Error boundary catch errors, show fallback UI",
+        "404 route show random error page",
+        "No console errors"
+      ],
+      "status": "DONE"
+    }
+  ],
+  "status": "IN_PROGRESS",
+  "updated_at": "2026-08-20 12:25:48"
+}
